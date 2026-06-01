@@ -12,7 +12,6 @@ namespace MarsGardenSim2026
             InitializeComponent();
             this.Load += Main_Load;
 
-           
         }
 
         private void Main_Load(object? sender, EventArgs e)

@@ -28,9 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            Select_Crop = new ComboBox();
+            SuspendLayout();
+            // 
+            // Select_Crop
+            // 
+            Select_Crop.FormattingEnabled = true;
+            Select_Crop.Name = "Select_Crop";
+            Select_Crop.Size = new Size(121, 23);
+            Select_Crop.TabIndex = 0;
+            Select_Crop.SelectedIndexChanged += Select_Crop_SelectedIndexChanged;
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private ComboBox Select_Crop;
     }
 }
