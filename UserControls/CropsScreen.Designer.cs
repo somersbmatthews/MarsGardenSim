@@ -34,18 +34,18 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(725, 119);
+            label1.Location = new Point(1598, 32);
             label1.Name = "label1";
             label1.Size = new Size(76, 15);
             label1.TabIndex = 0;
             label1.Text = "Crops Screen";
             // 
-            // Crops
+            // CropsScreen
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(label1);
-            Name = "Crops";
+            Name = "CropsScreen";
             Size = new Size(1837, 1007);
             ResumeLayout(false);
             PerformLayout();
