@@ -32,6 +32,7 @@
             button2 = new Button();
             button3 = new Button();
             mainPanel = new Panel();
+            rumSimulation = new Button();
             SuspendLayout();
             // 
             // button1
@@ -71,11 +72,22 @@
             mainPanel.Size = new Size(1882, 931);
             mainPanel.TabIndex = 3;
             // 
+            // rumSimulation
+            // 
+            rumSimulation.Location = new Point(1287, 21);
+            rumSimulation.Name = "rumSimulation";
+            rumSimulation.Size = new Size(167, 23);
+            rumSimulation.TabIndex = 4;
+            rumSimulation.Text = "Run Simulation";
+            rumSimulation.UseVisualStyleBackColor = true;
+            rumSimulation.Click += rumSimulation_Click;
+            // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1893, 985);
+            Controls.Add(rumSimulation);
             Controls.Add(mainPanel);
             Controls.Add(button3);
             Controls.Add(button2);
@@ -92,5 +104,6 @@
         private Button button2;
         private Button button3;
         private Panel mainPanel;
+        private Button rumSimulation;
     }
 }

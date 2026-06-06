@@ -19,11 +19,11 @@ namespace MarsGardenSim2026.Components
 
         public double Output {  get; set; }
 
-        public int MarketValue { get; set; }
+        public double MarketValue { get; set; }
 
         public int HappinessModifier { get; set; }
 
-        public CropProperties(String name, int growthRate, int c02Usage, int o2Produced, int waterUsage, double output, int marketValue, int happinessModifier)
+        public CropProperties(String name, int growthRate, int c02Usage, int o2Produced, int waterUsage, double output, double marketValue, int happinessModifier)
         {
             Name = name;
             GrowthRate = growthRate;

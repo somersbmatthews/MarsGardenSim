@@ -8,12 +8,16 @@ namespace MarsGardenSim2026
     {
         private static readonly SimulatorState _instance = new();
 
-        public static SimulatorState Instance => _instance;
+        // returns instance of its instantiated self in the constructor, key element of a singleton
+        public static SimulatorState Instance
+        {
+            get { return _instance; }
+        }
 
         public int Oxygen { get; set; }
 
         public int Water { get; set; }
 
-        Dictionary<string, double> cropsOutput = new Dictionary<string, double>();
+        Dictionary<string, double> cropsOutput { get; set; } = new Dictionary<string, double>();
     }
 }

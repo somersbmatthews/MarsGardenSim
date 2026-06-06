@@ -21,7 +21,7 @@ namespace MarsGardenSim2026.Components
 
         public double Output;
 
-        public int MarketValue;
+        public double MarketValue;
 
         public int HappinessModifier;
 
@@ -39,7 +39,6 @@ namespace MarsGardenSim2026.Components
             string[] crops = cropsInfoMap.Crops.Keys.ToArray();
 
             Select_Crop.Items.AddRange(crops);
-
         }
 
         public Crop(IContainer container)
@@ -49,14 +48,14 @@ namespace MarsGardenSim2026.Components
             InitializeComponent();
         }
 
-        public void Simulate()
+        public async void Simulate()
         {
-            SimulatorState.out
-        }
-
-        private void AddCropProperties()
-        {
-
+            while (true)
+            {
+                SimulatorState.Instance.Oxygen += O2Produced;
+                SimulatorState.Instance.Water -= WaterUsage;
+                await Task.Delay(1000);
+            }
         }
 
         private void Select_Crop_SelectedIndexChanged(object sender, EventArgs e)
@@ -78,7 +77,10 @@ namespace MarsGardenSim2026.Components
             MarketValue = selectedCropProperties.MarketValue;
             HappinessModifier = selectedCropProperties.HappinessModifier;
 
-            Properties.Resources.ResourceManager.GetObject($"{selectedCrop}_New");
+            string selectedCropSpacesRemoved = selectedCrop.Replace(" ", "");
+
+            this.BackgroundImage = Properties.Resources.ResourceManager.GetObject($"{selectedCropSpacesRemoved}_New") as Image;
+            this.BackgroundImageLayout = ImageLayout.Stretch;
         }
     }
 }

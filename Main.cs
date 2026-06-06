@@ -1,6 +1,10 @@
+using MarsGardenSim2026.Components;
+using System.Runtime.CompilerServices;
+using MarsGardenSim2026.Utilities;
+
 namespace MarsGardenSim2026
 {
-   
+
     public partial class Main : Form
     {
         private UserControl SelectableMainScreen = new MainScreen();
@@ -11,11 +15,13 @@ namespace MarsGardenSim2026
         {
             InitializeComponent();
             this.Load += Main_Load;
-
         }
 
         private void Main_Load(object? sender, EventArgs e)
         {
+
+
+
 
         }
 
@@ -42,5 +48,20 @@ namespace MarsGardenSim2026
         {
             LoadSelectedUserControl(SelectableWarehouseAndSpaceDockScreen);
         }
+
+        private void rumSimulation_Click(object sender, EventArgs e)
+        {
+            //Utilities.ControlExtensions
+
+            IEnumerable<Crop> crops = this.GetAllControlsOfType<Crop>();
+
+            foreach (Crop crop in crops)
+            {
+                crop.Simulate();
+            }
+        }
+
+
+
     }
 }
