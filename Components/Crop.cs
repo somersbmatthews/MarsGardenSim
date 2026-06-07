@@ -21,7 +21,7 @@ namespace MarsGardenSim2026.Components
 
         public double Output;
 
-        public double MarketValue;
+        public int MarketValue;
 
         public int HappinessModifier;
 

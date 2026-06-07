@@ -47,8 +47,8 @@ namespace MarsGardenSim2026.Components
                 int CO2Usage = int.Parse(columns[2]);
                 int O2Produced = int.Parse(columns[3]);
                 int WaterUsage = int.Parse(columns[4]);
-                int Output = int.Parse(columns[5]);
-                double MarketValue = double.Parse(columns[6]);
+                double Output = double.Parse(columns[5]);
+                int MarketValue = int.Parse(columns[6]);
                 int HappinessModifier = int.Parse(columns[7]);
 
                 Crops.Add(name, new CropProperties(name, GrowthRate, CO2Usage, O2Produced, WaterUsage, Output, MarketValue, HappinessModifier));
