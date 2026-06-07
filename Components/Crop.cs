@@ -30,6 +30,20 @@ namespace MarsGardenSim2026.Components
         public Crop()
         {
             InitializeComponent();
+            SetupCrop();
+        }
+
+        public Crop(IContainer container)
+        {
+            container.Add(this);
+
+            InitializeComponent();
+
+            SetupCrop();
+        }
+
+        private void SetupCrop()
+        {
 
             this.BackgroundImage = Properties.Resources.BrownField;
             this.BackgroundImageLayout = ImageLayout.Stretch;
@@ -40,15 +54,16 @@ namespace MarsGardenSim2026.Components
 
             Select_Crop.Items.AddRange(crops);
 
-            Select_Crop.Width = 30;
-            Select_Crop.Height = 30;
-        }
+            Select_Crop.Width = 500;
+            Select_Crop.Height = 150;
+            Select_Crop.Font = new Font("Segoe UI", 64);
 
-        public Crop(IContainer container)
-        {
-            container.Add(this);
+            Select_Crop.BringToFront();
 
-            InitializeComponent();
+            if (!this.Controls.Contains(Select_Crop))
+            {
+                this.Controls.Add(Select_Crop);
+            }
         }
 
         public async void Simulate()

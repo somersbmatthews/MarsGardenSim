@@ -14,5 +14,10 @@ namespace MarsGardenSim2026.UserControls
         {
             InitializeComponent();
         }
+
+        private void crop1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

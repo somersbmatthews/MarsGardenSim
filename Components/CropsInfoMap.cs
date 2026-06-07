@@ -8,7 +8,7 @@ namespace MarsGardenSim2026.Components
 {
     public class CropsInfoMap
     {
-        public Dictionary<String, CropProperties> Crops { get; }
+        public Dictionary<String, CropProperties> Crops { get; } = new Dictionary<string, CropProperties>();
         //public static readonly Dictionary<String, CropProperties> Crops =
         //    new()
         //    {
