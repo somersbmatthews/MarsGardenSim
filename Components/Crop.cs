@@ -39,6 +39,9 @@ namespace MarsGardenSim2026.Components
             string[] crops = cropsInfoMap.Crops.Keys.ToArray();
 
             Select_Crop.Items.AddRange(crops);
+
+            Select_Crop.Width = 30;
+            Select_Crop.Height = 30;
         }
 
         public Crop(IContainer container)
