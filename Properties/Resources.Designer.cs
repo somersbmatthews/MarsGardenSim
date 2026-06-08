@@ -653,6 +653,26 @@ namespace MarsGardenSim2026.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Mars_Surface {
+            get {
+                object obj = ResourceManager.GetObject("Mars_Surface", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Mars_Warehouse {
+            get {
+                object obj = ResourceManager.GetObject("Mars_Warehouse", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Mint_Growing {
             get {
                 object obj = ResourceManager.GetObject("Mint_Growing", resourceCulture);

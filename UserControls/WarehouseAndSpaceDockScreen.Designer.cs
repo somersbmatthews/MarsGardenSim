@@ -44,6 +44,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.Mars_Warehouse;
             Controls.Add(label1);
             Name = "WarehouseAndSpaceDockScreen";
             Size = new Size(2166, 1042);

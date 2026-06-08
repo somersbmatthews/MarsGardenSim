@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
             button2 = new Button();
             button3 = new Button();
             mainPanel = new Panel();
@@ -36,19 +35,9 @@
             lblTimeElapsed = new Label();
             SuspendLayout();
             // 
-            // button1
-            // 
-            button1.Location = new Point(10, 4);
-            button1.Name = "button1";
-            button1.Size = new Size(380, 47);
-            button1.TabIndex = 0;
-            button1.Text = "Main Screen";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
             // button2
             // 
-            button2.Location = new Point(396, 4);
+            button2.Location = new Point(27, 4);
             button2.Name = "button2";
             button2.Size = new Size(386, 47);
             button2.TabIndex = 1;
@@ -58,7 +47,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(788, 4);
+            button3.Location = new Point(419, 4);
             button3.Name = "button3";
             button3.Size = new Size(377, 47);
             button3.TabIndex = 2;
@@ -103,7 +92,6 @@
             Controls.Add(mainPanel);
             Controls.Add(button3);
             Controls.Add(button2);
-            Controls.Add(button1);
             Margin = new Padding(2, 1, 2, 1);
             Name = "Main";
             Text = " ";
@@ -112,8 +100,6 @@
         }
 
         #endregion
-
-        private Button button1;
         private Button button2;
         private Button button3;
         private Panel mainPanel;

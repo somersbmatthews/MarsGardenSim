@@ -7,16 +7,22 @@ namespace MarsGardenSim2026
 {
     public class SimulatorState
     {
+        // SimulatorState instantiated instance.
         private static readonly SimulatorState _instance = new();
 
+        // Oxygen available. Currently not a feature
         public int Oxygen { get; set; }
 
-        public int Water { get; set; }
+        // Water available. Currently not a feature
+        public int Water { get; set; } = 100000;
 
+        // a dictionary of the crops and their output
         public Dictionary<string, double> CropsOutput { get; private set; } = new Dictionary<string, double>();
 
+        // the delay between each iteration of the simulation.
         public int Delay { get; set; } = 1000;
 
+        // This is the time span that is displayed at the top right of the UI
         public TimeSpan TimeElapsed { get; set; }
 
         // returns instance of its instantiated self in the constructor, key element of a singleton
@@ -28,10 +34,10 @@ namespace MarsGardenSim2026
 
         private SimulatorState()
         {
+            // initialize the cropsInfoMap class
             CropsInfoMap cropsInfoMap = new CropsInfoMap();
 
-            Dictionary<string, CropProperties> newCrops = cropsInfoMap.Crops;
-
+            // iterates through cropsInfoMap.Crops.Keys and adds them to the CropsOutput dictionary
             foreach (string crop in cropsInfoMap.Crops.Keys)
             {
                 CropsOutput.Add(crop, 0);

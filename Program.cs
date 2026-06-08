@@ -14,17 +14,6 @@ namespace MarsGardenSim2026
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            //SimulatorState simulatorState = SimulatorState.Instance;
-
-            //CropsInfoMap cropsInfoMap = new CropsInfoMap();
-
-            //string[] crops = cropsInfoMap.Crops.Keys.ToArray();
-
-            //foreach (string crop in crops)
-            //{
-            //    SimulatorState.Instance.CropsOutput.Add(crop, 0);
-            //}
-
             Application.Run(new Main());
         }
     }

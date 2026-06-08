@@ -8,36 +8,22 @@ namespace MarsGardenSim2026.Components
 {
     public class CropsInfoMap
     {
+        // dictionary to hold the crops and their properties
         public Dictionary<String, CropProperties> Crops { get; } = new Dictionary<string, CropProperties>();
-        //public static readonly Dictionary<String, CropProperties> Crops =
-        //    new()
-        //    {
-        //        {
-        //            "Potato",
-        //            new CropProperties("Potato", 75, 85, 62, 60, 4.50, 45, 8)   
-        //        },
-        //        {
-        //            "Sweet Potatoes",
-        //            new CropProperties("Sweet Potatoes", 70, 80, 58, 55, 3.80, 50, 10)
-        //        },
-        //        {
-        //            "Lettuce",
-        //            new CropProperties("Lettuce", 95, 32, 23, 30, 2.60, 30, 5)
-        //        }
-        //    };
 
         public CropsInfoMap() {
 
+            // this is a byte array of the csv
             byte[] bytes = Properties.Resources.Mars_Crops;
-
+            // csv file of the UTF-8 file
             String csv = Encoding.UTF8.GetString(bytes: bytes);
-
+            // read the csv
             using StringReader reader = new StringReader(csv);
-
+            // empty line set to null
             string line = null;
 
             reader.ReadLine(); // skip header
-
+            // read each line of the csv and create CropProperties objects, then add each to the Crops dictionary
             while ((line = reader.ReadLine()) != null) {
 
                 string[] columns = line.Split(',');
@@ -53,6 +39,7 @@ namespace MarsGardenSim2026.Components
 
                 Crops.Add(name, new CropProperties(name, GrowthRate, CO2Usage, O2Produced, WaterUsage, Output, MarketValue, HappinessModifier));
             }
+            reader.Close();
         }
     }
 }

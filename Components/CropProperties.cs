@@ -5,6 +5,7 @@ using System.Windows.Forms.ComponentModel.Com2Interop;
 
 namespace MarsGardenSim2026.Components
 {
+    // data class for all the properties, please see Crop.cs for an example of some of their usage and purposes
     public class CropProperties
     {
 

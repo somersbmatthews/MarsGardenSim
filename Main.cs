@@ -42,15 +42,6 @@ namespace MarsGardenSim2026
             mainPanel.Controls.Add(screen);
         }
 
-        //private void LoadSelectedUserControl(UserControl selectedUserControl)
-        //{
-        //    mainPanel.Controls.Clear();
-
-        //    selectedUserControl.Dock = DockStyle.Fill;
-
-        //    mainPanel.Controls.Add(selectedUserControl);
-        //}
-
         private void LoadSelectedUserControl(UserControl selectedScreen)
         {
             foreach (Control control in mainPanel.Controls)

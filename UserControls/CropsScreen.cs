@@ -22,7 +22,8 @@ namespace MarsGardenSim2026.UserControls
 
         private void delayTrackBar_Scroll(object sender, EventArgs e)
         {
-            SimulatorState.Instance.Delay = delayTrackBar.Value * 1000;
+            // uses slider and speeds up the growth rate of crops
+            SimulatorState.Instance.Delay = 1000 / delayTrackBar.Value;
         }
     }
 }

@@ -1,4 +1,3 @@
 <Solution>
-  <Project Path="../MSTest/MSTestProject.csproj" Id="a3dda67d-eb2f-4d16-af60-1bad3c24b414" />
   <Project Path="MarsGardenSim2026.csproj" />
 </Solution>

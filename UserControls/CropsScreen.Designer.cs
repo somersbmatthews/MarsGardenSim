@@ -42,7 +42,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(1456, 103);
+            label1.Location = new Point(1286, 48);
             label1.Name = "label1";
             label1.Size = new Size(76, 15);
             label1.TabIndex = 0;
@@ -99,6 +99,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.Mars_Surface;
+            BackgroundImageLayout = ImageLayout.Stretch;
             Controls.Add(crop4);
             Controls.Add(crop3);
             Controls.Add(crop2);
