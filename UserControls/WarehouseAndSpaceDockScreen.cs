@@ -16,6 +16,11 @@ namespace MarsGardenSim2026.UserControls
         {
             InitializeComponent();
             CreateCropsComponents();
+            this.Load += WarehouseAndSpaceDockScreen_Load;
+        }
+
+        private void WarehouseAndSpaceDockScreen_Load(object sender, EventArgs e)
+        {
             UpdateProgressBars();
         }
 
@@ -32,8 +37,8 @@ namespace MarsGardenSim2026.UserControls
             for (int i = 0; i < cropsCount; i++)
             {
                 ProgressBar progressBar = new ProgressBar();
-                
-                if(i % 10 == 0)
+
+                if (i % 10 == 0)
                 {
                     columnCount = i / 10;
                 }
@@ -44,12 +49,12 @@ namespace MarsGardenSim2026.UserControls
                 progressBar.Location = new Point(x, y);
 
                 progressBar.Minimum = 0;
-                progressBar.Maximum = 1000;
+                progressBar.Maximum = 10000;
                 progressBar.Value = Math.Min((int)SimulatorState.Instance.CropsOutput[cropsList[i]], progressBar.Maximum);
                 progressBar.Size = new Size(width, height);
                 progressBar.Name = cropsList[i];
 
-                
+
 
                 Label cropLabel = new Label();
                 cropLabel.Text = cropsList[i];
@@ -63,7 +68,7 @@ namespace MarsGardenSim2026.UserControls
                 this.Controls.Add(progressBar);
                 this.Controls.Add(cropLabel);
 
-                
+
                 progressBar.BringToFront();
                 cropLabel.BringToFront();
 
@@ -73,43 +78,21 @@ namespace MarsGardenSim2026.UserControls
 
         private async void UpdateProgressBars()
         {
-            IEnumerable<ProgressBar> progressBars = this.GetAllControlsOfType<ProgressBar>();
-
-            int cropsCount = SimulatorState.Instance.CropsOutput.Keys.Count;
-            List<string> cropsList = SimulatorState.Instance.CropsOutput.Keys.ToList();
-
-            int count = 0;
-
-            foreach (ProgressBar progressBar in progressBars)
+            while (!this.IsDisposed)
             {
-                count++;
-                if(count % 80 == 0)
+                foreach (ProgressBar progressBar in this.GetAllControlsOfType<ProgressBar>())
                 {
-                    await Task.Delay(700);
-                }
-                
-
-
-                if (this.IsHandleCreated)
-                {
-                    await Task.Run(() =>
+                    if (SimulatorState.Instance.CropsOutput.TryGetValue(progressBar.Name, out double output))
                     {
-                        Invoke(() =>
-                        {
-                            if (progressBar.Name == "Potatoes")
-                            {
-                               int i = 1;
-                            
-                            // sets the progress bar value equal to the player health
-                            progressBar.Value = Math.Min((int)SimulatorState.Instance.CropsOutput[progressBar.Name], 1000);
-                            Dictionary<string, double> CropsOutputhere1 = SimulatorState.Instance.CropsOutput;
-                            }
-                            progressBar.Value = Math.Min((int)SimulatorState.Instance.CropsOutput[progressBar.Name], 1000);
-                            Dictionary<string, double> CropsOutputhere2 = SimulatorState.Instance.CropsOutput;
-                        });
+                        //if (progressBar.Name == "Potatoes")
+                        //{
+                            progressBar.Value = Math.Min((int)SimulatorState.Instance.CropsOutput[progressBar.Name], 10000 - progressBar.Value);
+                        //}
+                            //Dictionary<string, double> CropsOutputhere2 = SimulatorState.Instance.CropsOutput;
+                        }
+                    }
 
-                    });
-                }
+                await Task.Delay(500);
             }
         }
     }

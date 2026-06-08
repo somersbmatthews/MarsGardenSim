@@ -33,6 +33,9 @@
             label1 = new Label();
             crop1 = new MarsGardenSim2026.Components.Crop(components);
             delayTrackBar = new TrackBar();
+            crop2 = new MarsGardenSim2026.Components.Crop(components);
+            crop3 = new MarsGardenSim2026.Components.Crop(components);
+            crop4 = new MarsGardenSim2026.Components.Crop(components);
             ((System.ComponentModel.ISupportInitialize)delayTrackBar).BeginInit();
             SuspendLayout();
             // 
@@ -49,9 +52,9 @@
             // 
             crop1.BackgroundImage = (Image)resources.GetObject("crop1.BackgroundImage");
             crop1.BackgroundImageLayout = ImageLayout.Stretch;
-            crop1.Location = new Point(84, 152);
+            crop1.Location = new Point(27, 81);
             crop1.Name = "crop1";
-            crop1.Size = new Size(534, 265);
+            crop1.Size = new Size(503, 287);
             crop1.TabIndex = 1;
             crop1.Paint += crop1_Paint;
             // 
@@ -65,10 +68,40 @@
             delayTrackBar.Value = 1;
             delayTrackBar.Scroll += delayTrackBar_Scroll;
             // 
+            // crop2
+            // 
+            crop2.BackgroundImage = (Image)resources.GetObject("crop2.BackgroundImage");
+            crop2.BackgroundImageLayout = ImageLayout.Stretch;
+            crop2.Location = new Point(592, 85);
+            crop2.Name = "crop2";
+            crop2.Size = new Size(507, 283);
+            crop2.TabIndex = 3;
+            // 
+            // crop3
+            // 
+            crop3.BackgroundImage = (Image)resources.GetObject("crop3.BackgroundImage");
+            crop3.BackgroundImageLayout = ImageLayout.Stretch;
+            crop3.Location = new Point(26, 382);
+            crop3.Name = "crop3";
+            crop3.Size = new Size(504, 308);
+            crop3.TabIndex = 4;
+            // 
+            // crop4
+            // 
+            crop4.BackgroundImage = (Image)resources.GetObject("crop4.BackgroundImage");
+            crop4.BackgroundImageLayout = ImageLayout.Stretch;
+            crop4.Location = new Point(591, 385);
+            crop4.Name = "crop4";
+            crop4.Size = new Size(508, 305);
+            crop4.TabIndex = 5;
+            // 
             // CropsScreen
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(crop4);
+            Controls.Add(crop3);
+            Controls.Add(crop2);
             Controls.Add(delayTrackBar);
             Controls.Add(crop1);
             Controls.Add(label1);
@@ -84,5 +117,8 @@
         private Label label1;
         private Components.Crop crop1;
         private TrackBar delayTrackBar;
+        private Components.Crop crop2;
+        private Components.Crop crop3;
+        private Components.Crop crop4;
     }
 }

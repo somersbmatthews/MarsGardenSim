@@ -247,14 +247,14 @@
   <data name="Grapes_New" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Grapes_New.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="GreenBeans_Growing" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GreenBeans_Growing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Greenbeans_Growing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Greenbeans_Growing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="GreenBeans_Grown" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GreenBeans_Grown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Greenbeans_Grown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Greenbeans_Grown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="GreenBeans_New" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GreenBeans_New.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Greenbeans_New" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Greenbeans_New.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Kale_Growing" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Kale_Growing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
