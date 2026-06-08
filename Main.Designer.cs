@@ -33,6 +33,7 @@
             button3 = new Button();
             mainPanel = new Panel();
             rumSimulation = new Button();
+            lblTimeElapsed = new Label();
             SuspendLayout();
             // 
             // button1
@@ -82,11 +83,22 @@
             rumSimulation.UseVisualStyleBackColor = true;
             rumSimulation.Click += rumSimulation_Click;
             // 
+            // lblTimeElapsed
+            // 
+            lblTimeElapsed.AutoSize = true;
+            lblTimeElapsed.Location = new Point(1764, 23);
+            lblTimeElapsed.Name = "lblTimeElapsed";
+            lblTimeElapsed.Size = new Size(77, 15);
+            lblTimeElapsed.TabIndex = 5;
+            lblTimeElapsed.Text = "Time Elapsed";
+            lblTimeElapsed.Click += lblTimeElapsed_Click;
+            // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1893, 985);
+            Controls.Add(lblTimeElapsed);
             Controls.Add(rumSimulation);
             Controls.Add(mainPanel);
             Controls.Add(button3);
@@ -96,6 +108,7 @@
             Name = "Main";
             Text = " ";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -105,5 +118,6 @@
         private Button button3;
         private Panel mainPanel;
         private Button rumSimulation;
+        private Label lblTimeElapsed;
     }
 }

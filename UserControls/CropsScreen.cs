@@ -19,5 +19,10 @@ namespace MarsGardenSim2026.UserControls
         {
 
         }
+
+        private void delayTrackBar_Scroll(object sender, EventArgs e)
+        {
+            SimulatorState.Instance.Delay = delayTrackBar.Value * 1000;
+        }
     }
 }

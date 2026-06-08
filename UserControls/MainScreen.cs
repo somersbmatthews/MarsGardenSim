@@ -14,5 +14,10 @@ namespace MarsGardenSim2026
         {
             InitializeComponent();
         }
+
+        private void lblTimeElapsed_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

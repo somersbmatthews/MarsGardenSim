@@ -34,18 +34,18 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(855, 93);
+            label1.Location = new Point(1850, 23);
             label1.Name = "label1";
             label1.Size = new Size(188, 15);
             label1.TabIndex = 0;
             label1.Text = "Warehouse and SpaceDock Screen";
             // 
-            // WarehouseAndSpaceDock
+            // WarehouseAndSpaceDockScreen
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(label1);
-            Name = "WarehouseAndSpaceDock";
+            Name = "WarehouseAndSpaceDockScreen";
             Size = new Size(2166, 1042);
             ResumeLayout(false);
             PerformLayout();

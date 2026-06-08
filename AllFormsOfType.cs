@@ -17,10 +17,10 @@ namespace MarsGardenSim2026
                     yield return matchedControl;
                 }
 
-                //foreach (var child in control.GetAllControlsOfType<T>())
-                //{
-                //    yield return child;
-                //}
+                foreach (var child in GetAllControlsOfType<T>(control))
+                {
+                    yield return child;
+                }
             }
         }
 

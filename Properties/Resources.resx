@@ -265,14 +265,14 @@
   <data name="Kale_New" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Kale_New.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="KidneyBeans_Growing" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\KidneyBeans_Growing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Kidneybeans_Growing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Kidneybeans_Growing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="KidneyBeans_Grown" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\KidneyBeans_Grown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Kidneybeans_Grown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Kidneybeans_Grown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="KidneyBeans_New" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\KidneyBeans_New.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Kidneybeans_New" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Kidneybeans_New.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Lentils_Growing" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Lentils_Growing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

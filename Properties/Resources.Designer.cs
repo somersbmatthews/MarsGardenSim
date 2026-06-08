@@ -553,9 +553,9 @@ namespace MarsGardenSim2026.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap KidneyBeans_Growing {
+        internal static System.Drawing.Bitmap Kidneybeans_Growing {
             get {
-                object obj = ResourceManager.GetObject("KidneyBeans_Growing", resourceCulture);
+                object obj = ResourceManager.GetObject("Kidneybeans_Growing", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -563,9 +563,9 @@ namespace MarsGardenSim2026.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap KidneyBeans_Grown {
+        internal static System.Drawing.Bitmap Kidneybeans_Grown {
             get {
-                object obj = ResourceManager.GetObject("KidneyBeans_Grown", resourceCulture);
+                object obj = ResourceManager.GetObject("Kidneybeans_Grown", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -573,9 +573,9 @@ namespace MarsGardenSim2026.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap KidneyBeans_New {
+        internal static System.Drawing.Bitmap Kidneybeans_New {
             get {
-                object obj = ResourceManager.GetObject("KidneyBeans_New", resourceCulture);
+                object obj = ResourceManager.GetObject("Kidneybeans_New", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
