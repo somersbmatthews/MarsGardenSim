@@ -11,7 +11,7 @@ namespace MarsGardenSim2026
         private static readonly SimulatorState _instance = new();
 
         // Oxygen available. Currently not a feature
-        public int Oxygen { get; set; }
+        public int Oxygen { get; set; } = 10000;
 
         // Water available. Currently not a feature
         public int Water { get; set; } = 100000;
@@ -25,7 +25,7 @@ namespace MarsGardenSim2026
         // This is the time span that is displayed at the top right of the UI
         public TimeSpan TimeElapsed { get; set; }
 
-        // returns instance of its instantiated self in the constructor, key element of a singleton
+        // returns instance of its instantiated self in the constructor
         public static SimulatorState Instance
         {
             get { return _instance; }
