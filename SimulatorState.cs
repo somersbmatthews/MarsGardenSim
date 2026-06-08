@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Collections.Concurrent;
 
 namespace MarsGardenSim2026
 {
@@ -17,7 +18,7 @@ namespace MarsGardenSim2026
         public int Water { get; set; } = 100000;
 
         // a dictionary of the crops and their output
-        public Dictionary<string, double> CropsOutput { get; private set; } = new Dictionary<string, double>();
+        public ConcurrentDictionary<string, double> CropsOutput { get; private set; } = new ConcurrentDictionary<string, double>();
 
         // the delay between each iteration of the simulation.
         public int Delay { get; set; } = 1000;
@@ -40,7 +41,7 @@ namespace MarsGardenSim2026
             // iterates through cropsInfoMap.Crops.Keys and adds them to the CropsOutput dictionary
             foreach (string crop in cropsInfoMap.Crops.Keys)
             {
-                CropsOutput.Add(crop, 0);
+                CropsOutput.TryAdd(crop, 0);
             }
         }
 

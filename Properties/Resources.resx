@@ -136,14 +136,14 @@
   <data name="Basil_New" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Basil_New.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BlackBeans_Growing" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BlackBeans_Growing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Blackbeans_Growing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Blackbeans_Growing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BlackBeans_Grown" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BlackBeans_Grown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Blackbeans_Grown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Blackbeans_Grown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BlackBeans_New" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BlackBeans_New.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Blackbeans_New" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Blackbeans_New.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Blueberries_Growing" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Blueberries_Growing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
