@@ -18,7 +18,7 @@ namespace MarsGardenSim2026.Components
 
         public int WaterUsage { get; set; }
 
-        public double Output {  get; set; }
+        public double Output {  get; private set; }
 
         public int MarketValue { get; set; }
 

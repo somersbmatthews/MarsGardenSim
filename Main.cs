@@ -40,6 +40,8 @@ namespace MarsGardenSim2026
             screen.Dock = DockStyle.Fill;
             screen.Visible = false;
             mainPanel.Controls.Add(screen);
+
+            LoadSelectedUserControl(SelectableCropsScreen);
         }
 
         private void LoadSelectedUserControl(UserControl selectedScreen)
