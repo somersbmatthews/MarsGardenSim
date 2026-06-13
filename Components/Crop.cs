@@ -41,13 +41,17 @@ namespace MarsGardenSim2026.Components
         public Crop()
         {
             InitializeComponent();
-            SetupCrop();
         }
 
         public Crop(IContainer container)
         {
             container.Add(this);
             InitializeComponent();
+        }
+
+        private void Crop_Load(object sender, EventArgs e)
+        {
+            this.Select_Crop.SelectedIndex = 0;
             SetupCrop();
         }
 

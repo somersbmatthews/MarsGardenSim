@@ -32,7 +32,6 @@ namespace MarsGardenSim2026
             get { return _instance; }
         }
 
-
         private SimulatorState()
         {
             // initialize the cropsInfoMap class

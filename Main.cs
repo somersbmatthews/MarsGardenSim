@@ -16,7 +16,6 @@ namespace MarsGardenSim2026
 
         public Main()
         {
-            
             InitializeComponent();
             this.Load += Main_Load;
         }
@@ -25,14 +24,11 @@ namespace MarsGardenSim2026
         {
             lblTimeElapsed.Text = SimulatorState.Instance.TimeElapsed.ToString(@"hh\:mm\:ss");
 
-            SelectableMainScreen = new MainScreen();
             SelectableCropsScreen = new CropsScreen();
             SelectableWarehouseAndSpaceDockScreen = new WarehouseAndSpaceDockScreen();
 
-            LoadScreen(SelectableMainScreen);
             LoadScreen(SelectableCropsScreen);
             LoadScreen(SelectableWarehouseAndSpaceDockScreen);
-
         }
 
         private void LoadScreen(UserControl screen)
@@ -86,7 +82,6 @@ namespace MarsGardenSim2026
         {
             while (true)
             {
-
                 TimeSpan timeSpan = TimeSpan.FromMilliseconds(SimulatorState.Instance.TimeElapsed.TotalMilliseconds + SimulatorState.Instance.Delay);
 
                 SimulatorState.Instance.TimeElapsed = timeSpan;
@@ -94,7 +89,6 @@ namespace MarsGardenSim2026
                 lblTimeElapsed.Text = SimulatorState.Instance.TimeElapsed.ToString(@"hh\:mm\:ss");
 
                 await Task.Delay(SimulatorState.Instance.Delay);
-
             }
         }
 
