@@ -9,10 +9,9 @@ namespace MarsGardenSim2026
 
     public partial class Main : Form
     {
-        private UserControl SelectableMainScreen;
         private UserControl SelectableCropsScreen;
         private UserControl SelectableWarehouseAndSpaceDockScreen;
-        
+
 
         public Main()
         {
@@ -29,6 +28,7 @@ namespace MarsGardenSim2026
 
             LoadScreen(SelectableCropsScreen);
             LoadScreen(SelectableWarehouseAndSpaceDockScreen);
+            simulationTimer.Start();
         }
 
         private void LoadScreen(UserControl screen)
@@ -51,11 +51,6 @@ namespace MarsGardenSim2026
             selectedScreen.BringToFront();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            LoadSelectedUserControl(SelectableMainScreen);
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             LoadSelectedUserControl(SelectableCropsScreen);
@@ -64,18 +59,6 @@ namespace MarsGardenSim2026
         private void button3_Click(object sender, EventArgs e)
         {
             LoadSelectedUserControl(SelectableWarehouseAndSpaceDockScreen);
-        }
-
-        private void rumSimulation_Click(object sender, EventArgs e)
-        {
-            IEnumerable<Crop> crops = this.GetAllControlsOfType<Crop>();
-
-            foreach (Crop crop in crops)
-            {
-                crop.Simulate(SimulatorState.Instance.Delay);
-            }
-            runTimeElapsed();
-
         }
 
         private async void runTimeElapsed()
@@ -96,5 +79,18 @@ namespace MarsGardenSim2026
         {
 
         }
+
+        private void simulationTimer_Tick(object sender, EventArgs e)
+        {
+            IEnumerable<Crop> crops = this.GetAllControlsOfType<Crop>();
+
+            foreach (Crop crop in crops)
+            {
+                crop.Simulate();
+            }
+        }
     }
 }
+
+// Timer documentation
+// https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.timer?view=windowsdesktop-10.0

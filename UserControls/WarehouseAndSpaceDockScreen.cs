@@ -95,24 +95,39 @@ namespace MarsGardenSim2026.UserControls
         }
 
         // method to update the progress bar 
-        private async void UpdateProgressBars()
+        //private async void UpdateProgressBars()
+        //{
+        //    // makes sure the UserControl is not disposed. It is perhaps not needed but the LLM said it was good practice.
+        //    while (!this.IsDisposed)
+        //    {
+        //        // iterates through all the progess bars in the UserControl
+        //        foreach (ProgressBar progressBar in this.GetAllControlsOfType<ProgressBar>())
+        //        {
+        //            // this is my first time using TryGetValue, I will try to use it in future more often. It doesn't through an exception if the key is not found.
+        //            if (SimulatorState.Instance.CropsOutput.TryGetValue(progressBar.Name, out double output))
+        //            {
+        //                // updates the value of the progress bar with the outputed crops from the CropsScreen via data stored in the SimulatorState singleton
+        //                progressBar.Value = Math.Min((int)SimulatorState.Instance.CropsOutput[progressBar.Name], 10000 - progressBar.Value);
+        //            }
+        //        }
+        //        // waits half a second so the infinite loop doesn't use up too much cpu
+        //        await Task.Delay(500);
+        //    }
+        //}
+
+        private void UpdateProgressBars()
         {
-            // makes sure the UserControl is not disposed. It is perhaps not needed but the LLM said it was good practice.
-            while (!this.IsDisposed)
+            // iterates through all the progess bars in the UserControl
+            foreach (ProgressBar progressBar in this.GetAllControlsOfType<ProgressBar>())
             {
-                // iterates through all the progess bars in the UserControl
-                foreach (ProgressBar progressBar in this.GetAllControlsOfType<ProgressBar>())
+                // this is my first time using TryGetValue, I will try to use it in future more often. It doesn't through an exception if the key is not found.
+                if (SimulatorState.Instance.CropsOutput.TryGetValue(progressBar.Name, out double output))
                 {
-                    // this is my first time using TryGetValue, I will try to use it in future more often. It doesn't through an exception if the key is not found.
-                    if (SimulatorState.Instance.CropsOutput.TryGetValue(progressBar.Name, out double output))
-                    {
-                        // updates the value of the progress bar with the outputed crops from the CropsScreen via data stored in the SimulatorState singleton
-                        progressBar.Value = Math.Min((int)SimulatorState.Instance.CropsOutput[progressBar.Name], 10000 - progressBar.Value);
-                    }
+                    // updates the value of the progress bar with the outputed crops from the CropsScreen via data stored in the SimulatorState singleton
+                    progressBar.Value = Math.Min((int)SimulatorState.Instance.CropsOutput[progressBar.Name], 10000 - progressBar.Value);
                 }
-                // waits half a second so the infinite loop doesn't use up too much cpu
-                await Task.Delay(500);
             }
-        }
+         }
+
     }
 }

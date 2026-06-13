@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             button2 = new Button();
             button3 = new Button();
             mainPanel = new Panel();
-            rumSimulation = new Button();
             lblTimeElapsed = new Label();
+            simulationTimer = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
             // button2
@@ -62,16 +63,6 @@
             mainPanel.Size = new Size(1882, 931);
             mainPanel.TabIndex = 3;
             // 
-            // rumSimulation
-            // 
-            rumSimulation.Location = new Point(1287, 21);
-            rumSimulation.Name = "rumSimulation";
-            rumSimulation.Size = new Size(167, 23);
-            rumSimulation.TabIndex = 4;
-            rumSimulation.Text = "Run Simulation";
-            rumSimulation.UseVisualStyleBackColor = true;
-            rumSimulation.Click += rumSimulation_Click;
-            // 
             // lblTimeElapsed
             // 
             lblTimeElapsed.AutoSize = true;
@@ -82,13 +73,17 @@
             lblTimeElapsed.Text = "Time Elapsed";
             lblTimeElapsed.Click += lblTimeElapsed_Click;
             // 
+            // simulationTimer
+            // 
+            simulationTimer.Interval = 1000;
+            simulationTimer.Tick += simulationTimer_Tick;
+            // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1893, 985);
             Controls.Add(lblTimeElapsed);
-            Controls.Add(rumSimulation);
             Controls.Add(mainPanel);
             Controls.Add(button3);
             Controls.Add(button2);
@@ -103,7 +98,7 @@
         private Button button2;
         private Button button3;
         private Panel mainPanel;
-        private Button rumSimulation;
         private Label lblTimeElapsed;
+        private System.Windows.Forms.Timer simulationTimer;
     }
 }

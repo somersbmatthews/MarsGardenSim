@@ -47,12 +47,12 @@ namespace MarsGardenSim2026.Components
         {
             container.Add(this);
             InitializeComponent();
+            SetupCrop();
         }
 
         private void Crop_Load(object sender, EventArgs e)
         {
             this.Select_Crop.SelectedIndex = 0;
-            SetupCrop();
         }
 
         private void SetupCrop()
@@ -82,24 +82,19 @@ namespace MarsGardenSim2026.Components
             //Select_Crop.Anchor = AnchorStyles.Top | AnchorStyles.Right; 
         }
 
-        public async void Simulate(int delay)
-        {
-            while (true)
+        public void Simulate()
+        {      
+            // if no crop is selected, nothing happens
+            if(Select_Crop.SelectedItem == null)
             {
-                // if no crop is selected, nothing happens
-                if(Select_Crop.SelectedItem == null)
-                {
-                    await Task.Delay(SimulatorState.Instance.Delay);
-                    break;
-                }
-                // tracks resources used from singleton
-                SimulatorState.Instance.Oxygen += O2Produced;
-                SimulatorState.Instance.Water -= WaterUsage;
-                // checks the growth stage
-                CheckGrowthStage();
-                // waits so the infinite loop doesn't use too much cpu
-                await Task.Delay(SimulatorState.Instance.Delay);
+               return;
             }
+            // tracks resources used from singleton
+            SimulatorState.Instance.Oxygen += O2Produced;
+            SimulatorState.Instance.Water -= WaterUsage;
+            // checks the growth stage
+            CheckGrowthStage();
+            // waits so the infinite loop doesn't use too much cpu
         }
 
         private void CheckGrowthStage()
