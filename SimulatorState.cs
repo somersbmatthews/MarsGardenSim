@@ -25,7 +25,7 @@ namespace MarsGardenSim2026
         public int Water { get; set; } = 100000;
 
         // a dictionary of the crops and their output
-        public ConcurrentDictionary<string, double> CropsOutput { get; private set; } = new ConcurrentDictionary<string, double>();
+        public ConcurrentDictionary<string, double> CropsOutput { get; } = new ConcurrentDictionary<string, double>();
 
         // the delay between each iteration of the simulation.
         public int Delay { get; set; } = 1000;
