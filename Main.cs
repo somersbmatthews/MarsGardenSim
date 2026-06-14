@@ -71,12 +71,12 @@ namespace MarsGardenSim2026
         private void simulationTimer_Tick(object sender, EventArgs e)
         {
             SimulatorState.Instance.RaiseTick();
-            IEnumerable<Crop> crops = this.GetAllControlsOfType<Crop>();
+            //IEnumerable<Crop> crops = this.GetAllControlsOfType<Crop>();
 
-            foreach (Crop crop in crops)
-            {
-                crop.Simulate();
-            }
+            //foreach (Crop crop in crops)
+            //{
+            //    crop.Simulate();
+            //}
         }
     }
 }
