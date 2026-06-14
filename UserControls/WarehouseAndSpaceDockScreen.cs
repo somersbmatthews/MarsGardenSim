@@ -44,7 +44,7 @@ namespace MarsGardenSim2026.UserControls
             for (int i = 0; i < cropsCount; i++)
             {
                 // instantiates a new progress bar
-                ProgressBar progressBar = new ProgressBar();
+                WarehouseProgressBar progressBar = new WarehouseProgressBar();
 
                 // divides the crops count by 10;
                 if (i % 10 == 0)
@@ -64,8 +64,8 @@ namespace MarsGardenSim2026.UserControls
                 // sets the min and max values of the progress bar.
                 progressBar.Minimum = 0;
                 progressBar.Maximum = 10000;
-                // sets the value of the progress bar
-                progressBar.Value = Math.Min((int)SimulatorState.Instance.CropsOutput[cropsList[i]], progressBar.Maximum);
+                // sets the value of the progress bar, makes sure it doesn't exceed the progress bar maxiumum capacity (this limitation might not be needed)
+                progressBar.Value = Math.Min((int)SimulatorState.Instance.CropsOutput[cropsList[i]], progressBar.Maximum - progressBar.Value);
                 // sets the size of the progress bar
                 progressBar.Size = new Size(width, height);
                 // sets the name of the progress bar, which is a crop from the list of crops from the instantiated singleton dictionary
@@ -97,12 +97,12 @@ namespace MarsGardenSim2026.UserControls
 
         private void Simulate()
         {
-            UpdateProgressBars();
+            //UpdateProgressBars();
         }
 
         private void OnSimulationTick(object? sender, EventArgs e)
         {
-            Simulate();
+            //Simulate();
         }
 
         // method to update the progress bar 

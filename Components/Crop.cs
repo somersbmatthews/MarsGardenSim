@@ -178,7 +178,7 @@ namespace MarsGardenSim2026.Components
             // if a crop has two words, it removes the space between them before accessing the image
             string selectedCropSpacesRemoved = selectedCrop.Replace(" ", "");
             // sets the accessed image
-            this.BackgroundImage = Properties.Resources.ResourceManager.GetObject($"{selectedCropSpacesRemoved}_New") as Image;
+            this.BackgroundImage = GetImage(selectedCropSpacesRemoved, GrowthState.New);
             this.BackgroundImageLayout = ImageLayout.Stretch;
         }
 

@@ -1,8 +1,8 @@
-﻿namespace MarsGardenSim2026.UserControls
+﻿namespace MarsGardenSim2026.Components
 {
-    partial class WarehouseAndSpaceDockScreen
+    partial class WarehouseProgressBar
     {
-        /// <summary> 
+        /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
@@ -17,27 +17,19 @@
             {
                 components.Dispose();
             }
+            SimulatorState.Instance.SimulationTick -= OnSimulationTick;
             base.Dispose(disposing);
         }
 
         #region Component Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
+        /// <summary>
+        /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            SuspendLayout();
-            // 
-            // WarehouseAndSpaceDockScreen
-            // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.Mars_Warehouse;
-            Name = "WarehouseAndSpaceDockScreen";
-            Size = new Size(2166, 1042);
-            ResumeLayout(false);
+            components = new System.ComponentModel.Container();
         }
 
         #endregion
