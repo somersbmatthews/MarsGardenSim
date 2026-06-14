@@ -120,42 +120,32 @@ namespace MarsGardenSim2026.Components
 
             if (cropGrowth <= 333) // new growth state
             {
-                if (this.GrowthState != GrowthState.New)
-                {
-                    this.GrowthState = GrowthState.New;
-                    // sets the image
-                    this.BackgroundImage = Properties.Resources.ResourceManager.GetObject($"{selectedCropSpacesRemoved}_New") as Image;
-                    this.BackgroundImageLayout = ImageLayout.Stretch;
-                }
+                setGrowthState(GrowthState.New, Properties.Resources.ResourceManager.GetObject($"{selectedCropSpacesRemoved}_New") as Image);
             }
             else if(cropGrowth <= 666) // growing growth state
             {
-                    if (this.GrowthState != GrowthState.Growing)
-                    {
-                        this.GrowthState = GrowthState.Growing;
-                        this.BackgroundImage = Properties.Resources.ResourceManager.GetObject($"{selectedCropSpacesRemoved}_Growing") as Image;
-                        this.BackgroundImageLayout = ImageLayout.Stretch;
-                    }
-                }
-                else // grown growth state
+                setGrowthState(GrowthState.Growing, Properties.Resources.ResourceManager.GetObject($"{selectedCropSpacesRemoved}_Growing") as Image);
+            }
+            else // grown growth state
             {
-                if (this.GrowthState != GrowthState.Grown)
+                setGrowthState(GrowthState.Grown, Properties.Resources.ResourceManager.GetObject($"{selectedCropSpacesRemoved}_Grown") as Image);
+                if (cropGrowth > 1000) // grown growth state and the crop is harvested.
                 {
-                    this.GrowthState = GrowthState.Grown;
-                    this.BackgroundImage = Properties.Resources.ResourceManager.GetObject($"{selectedCropSpacesRemoved}_Grown") as Image;
-                    this.BackgroundImageLayout = ImageLayout.Stretch;
+                    SimulatorState.Instance.CropsOutput[Select_Crop.SelectedItem.ToString()] += 1000;
+                    cropGrowth = 0;
+                    setGrowthState(GrowthState.New, Properties.Resources.ResourceManager.GetObject($"{selectedCropSpacesRemoved}_New") as Image);
                 }
-                    if (cropGrowth > 1000) // grown growth state and the crop is harvested.
-                    {
-                        this.GrowthState = GrowthState.Grown;
-                        SimulatorState.Instance.CropsOutput[Select_Crop.SelectedItem.ToString()] += 1000;
-                        cropGrowth = 0;
-                        this.BackgroundImage = Properties.Resources.ResourceManager.GetObject($"{selectedCropSpacesRemoved}_New") as Image;
-                        this.BackgroundImageLayout = ImageLayout.Stretch;
-                    }
-                
             }
             
+        }
+
+        private void setGrowthState(GrowthState growthState, Image cropBackground) {
+            if (this.GrowthState != growthState)
+            {
+                this.GrowthState = growthState;
+                this.BackgroundImage = cropBackground;
+                this.BackgroundImageLayout = ImageLayout.Stretch;
+            }
         }
 
         private void Select_Crop_SelectedIndexChanged(object sender, EventArgs e)
