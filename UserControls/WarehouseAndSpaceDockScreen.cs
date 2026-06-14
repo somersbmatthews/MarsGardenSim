@@ -21,12 +21,13 @@ namespace MarsGardenSim2026.UserControls
 
         private void WarehouseAndSpaceDockScreen_Load(object sender, EventArgs e)
         {
-            // method to update the progress bars with the produced crops
-            UpdateProgressBars();
+            
         }
 
         private void CreateCropsComponents()
         {
+            // Subscribe OnSimulationTick delegate to EventHandler "Event Bus"
+            SimulatorState.Instance.SimulationTick += OnSimulationTick;
             // count of total crops availabe to plant
             int cropsCount = SimulatorState.Instance.CropsOutput.Keys.Count;
             // lsit of crops
@@ -92,6 +93,16 @@ namespace MarsGardenSim2026.UserControls
 
 
             }
+        }
+
+        private void Simulate()
+        {
+            UpdateProgressBars();
+        }
+
+        private void OnSimulationTick(object? sender, EventArgs e)
+        {
+            Simulate();
         }
 
         // method to update the progress bar 

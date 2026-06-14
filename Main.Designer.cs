@@ -32,7 +32,6 @@
             button2 = new Button();
             button3 = new Button();
             mainPanel = new Panel();
-            lblTimeElapsed = new Label();
             simulationTimer = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
@@ -63,16 +62,6 @@
             mainPanel.Size = new Size(1882, 931);
             mainPanel.TabIndex = 3;
             // 
-            // lblTimeElapsed
-            // 
-            lblTimeElapsed.AutoSize = true;
-            lblTimeElapsed.Location = new Point(1764, 23);
-            lblTimeElapsed.Name = "lblTimeElapsed";
-            lblTimeElapsed.Size = new Size(77, 15);
-            lblTimeElapsed.TabIndex = 5;
-            lblTimeElapsed.Text = "Time Elapsed";
-            lblTimeElapsed.Click += lblTimeElapsed_Click;
-            // 
             // simulationTimer
             // 
             simulationTimer.Interval = 1000;
@@ -83,7 +72,6 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1893, 985);
-            Controls.Add(lblTimeElapsed);
             Controls.Add(mainPanel);
             Controls.Add(button3);
             Controls.Add(button2);
@@ -91,14 +79,12 @@
             Name = "Main";
             Text = " ";
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
         private Button button2;
         private Button button3;
         private Panel mainPanel;
-        private Label lblTimeElapsed;
         private System.Windows.Forms.Timer simulationTimer;
     }
 }

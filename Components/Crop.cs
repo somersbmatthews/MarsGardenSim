@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Diagnostics.Eventing.Reader;
 using System.Text;
+using System.Timers;
 
 namespace MarsGardenSim2026.Components
 {
@@ -18,6 +19,7 @@ namespace MarsGardenSim2026.Components
 
     public partial class Crop : Panel
     {
+
         private String Name;
 
         private int GrowthRate;
@@ -41,6 +43,7 @@ namespace MarsGardenSim2026.Components
         public Crop()
         {
             InitializeComponent();
+            SetupCrop();
         }
 
         public Crop(IContainer container)
@@ -57,6 +60,8 @@ namespace MarsGardenSim2026.Components
 
         private void SetupCrop()
         {
+            // Subscribe OnSimulationTick delegate to EventHandler "Event Bus"
+            SimulatorState.Instance.SimulationTick += OnSimulationTick;
             // background image is set to the brown field
             this.BackgroundImage = Properties.Resources.BrownField;
             this.BackgroundImageLayout = ImageLayout.Stretch;
@@ -166,6 +171,12 @@ namespace MarsGardenSim2026.Components
             // sets the accessed image
             this.BackgroundImage = Properties.Resources.ResourceManager.GetObject($"{selectedCropSpacesRemoved}_New") as Image;
             this.BackgroundImageLayout = ImageLayout.Stretch;
+        }
+
+        // This is the event that is subscribed to the event bus that calls Simulate() on timer interval tick of one second.
+        private void OnSimulationTick(object? sender, EventArgs e)
+        {
+            Simulate();
         }
     }
 }

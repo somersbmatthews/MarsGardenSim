@@ -17,6 +17,7 @@
             {
                 components.Dispose();
             }
+            SimulatorState.Instance.SimulationTick -= OnSimulationTick;
             base.Dispose(disposing);
         }
 

@@ -12,6 +12,10 @@ namespace MarsGardenSim2026
         private UserControl SelectableCropsScreen;
         private UserControl SelectableWarehouseAndSpaceDockScreen;
 
+        public System.Windows.Forms.Timer GetSimulationTimer
+        {
+            get { return simulationTimer; }
+        }
 
         public Main()
         {
@@ -21,8 +25,6 @@ namespace MarsGardenSim2026
 
         private void Main_Load(object? sender, EventArgs e)
         {
-            lblTimeElapsed.Text = SimulatorState.Instance.TimeElapsed.ToString(@"hh\:mm\:ss");
-
             SelectableCropsScreen = new CropsScreen();
             SelectableWarehouseAndSpaceDockScreen = new WarehouseAndSpaceDockScreen();
 
@@ -61,20 +63,6 @@ namespace MarsGardenSim2026
             LoadSelectedUserControl(SelectableWarehouseAndSpaceDockScreen);
         }
 
-        private async void runTimeElapsed()
-        {
-            while (true)
-            {
-                TimeSpan timeSpan = TimeSpan.FromMilliseconds(SimulatorState.Instance.TimeElapsed.TotalMilliseconds + SimulatorState.Instance.Delay);
-
-                SimulatorState.Instance.TimeElapsed = timeSpan;
-
-                lblTimeElapsed.Text = SimulatorState.Instance.TimeElapsed.ToString(@"hh\:mm\:ss");
-
-                await Task.Delay(SimulatorState.Instance.Delay);
-            }
-        }
-
         private void lblTimeElapsed_Click(object sender, EventArgs e)
         {
 
@@ -82,6 +70,7 @@ namespace MarsGardenSim2026
 
         private void simulationTimer_Tick(object sender, EventArgs e)
         {
+            SimulatorState.Instance.RaiseTick();
             IEnumerable<Crop> crops = this.GetAllControlsOfType<Crop>();
 
             foreach (Crop crop in crops)
