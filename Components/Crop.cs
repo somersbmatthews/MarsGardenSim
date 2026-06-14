@@ -120,23 +120,28 @@ namespace MarsGardenSim2026.Components
 
             if (cropGrowth <= 333) // new growth state
             {
-                setGrowthState(GrowthState.New, Properties.Resources.ResourceManager.GetObject($"{selectedCropSpacesRemoved}_New") as Image);
+                setGrowthState(GrowthState.New, GetImage(selectedCrop, GrowthState.New));
             }
             else if(cropGrowth <= 666) // growing growth state
             {
-                setGrowthState(GrowthState.Growing, Properties.Resources.ResourceManager.GetObject($"{selectedCropSpacesRemoved}_Growing") as Image);
+                setGrowthState(GrowthState.Growing, GetImage(selectedCrop, GrowthState.Growing));
             }
             else // grown growth state
             {
-                setGrowthState(GrowthState.Grown, Properties.Resources.ResourceManager.GetObject($"{selectedCropSpacesRemoved}_Grown") as Image);
+                setGrowthState(GrowthState.Grown, GetImage(selectedCrop, GrowthState.Grown));
                 if (cropGrowth > 1000) // grown growth state and the crop is harvested.
                 {
                     SimulatorState.Instance.CropsOutput[Select_Crop.SelectedItem.ToString()] += 1000;
                     cropGrowth = 0;
-                    setGrowthState(GrowthState.New, Properties.Resources.ResourceManager.GetObject($"{selectedCropSpacesRemoved}_New") as Image);
+                    setGrowthState(GrowthState.New, GetImage(selectedCrop, GrowthState.New));
                 }
             }
             
+        }
+
+        private Image GetImage(string selectedCrop, GrowthState growthState) 
+        {
+            return Properties.Resources.ResourceManager.GetObject($"{selectedCrop}_{growthState}") as Image ?? Properties.Resources.BrownField;
         }
 
         private void setGrowthState(GrowthState growthState, Image cropBackground) {
